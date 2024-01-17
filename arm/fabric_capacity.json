@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "sku": {
+            "type": "string",
+            "allowedValues": [
+                "F2",
+                "F4",
+                "F8",
+                "F16",
+                "F32",
+                "F64",
+                "F128",
+                "F256",
+                "F512",
+                "F1024",
+                "F2048"
+            ]
+        },
+        "admin": {
+            "type": "string"
+        },
+        "tagValues": {
+            "type": "object",
+            "defaultValue": {}
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2022-07-01-preview",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "[parameters('sku')]",
+                "tier": "Fabric"
+            },
+            "properties": {
+                "administration": {
+                    "members": [
+                        "[parameters('admin')]"
+                    ]
+                }
+            },
+            "type": "Microsoft.Fabric/capacities",
+            "tags": "[parameters('tagValues')]"
+        }
+    ],
+    "outputs": {}
+}

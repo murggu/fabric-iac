@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "value": "fabarmtest001"
+        },
+        "location": {
+            "value": "northeurope"
+        },
+        "sku": {
+            "value": "F2"
+        },
+        "admin": {
+            "value": "<admin_email>"
+        },
+        "tagValues": {
+            "value": {}
+        }
+    }
+}
