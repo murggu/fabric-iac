@@ -1,6 +1,6 @@
 # fabric-iac
 
-fabric-iac includes IaC to deploy Fabric artifacts (Fabric capacity for now). This project is Experimental.
+fabric-iac includes IaC examples to deploy Fabric capacity (F SKU) in Azure.
 
 ## Prerequites
 Make sure you have the following prerequisites in place:
